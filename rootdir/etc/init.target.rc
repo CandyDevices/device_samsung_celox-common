@@ -42,6 +42,9 @@ on fs
     # Enable zRAM
     swapon_all /fstab.qcom
 
+    # Symlink hack to fix RIL crashes
+    symlink /data/data/com.android.providers.telephony/shared_prefs/preferred-apn1.xml /data/data/com.android.providers.telephony/shared_prefs/preferred-apn.xml
+
 on post-fs-data
     mkdir /system/etc/firmware/misc 0771 system system
     mkdir /system/etc/firmware/misc_mdm 0771 system system
